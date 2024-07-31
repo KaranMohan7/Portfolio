@@ -5,7 +5,7 @@ import Footer from "./Footer";
 const Contact = () => {
   return (
     <>
-      <div className="w-full h-screen bg-[#F1F1F1] ">
+      <div className="w-full h-[75vh] lg:h-[80vh] xl:[h-82vh] bg-[#F1F1F1] ">
         <h1 className=" flex items-center gap-3 text-[4vw] font-bold p-14 lg:p-28">
           Contact <FiArrowDownRight style={{ fontSize: "3.5vw" }} />
         </h1>

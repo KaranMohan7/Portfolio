@@ -14,7 +14,7 @@ const Projects = () => {
         <div
           data-scroll
           data-scroll-section
-          className="flex flex-wrap items-center justify-evenly "
+          className="flex flex-wrap items-center justify-evenly gap-5 "
         >
           <div
             data-scroll

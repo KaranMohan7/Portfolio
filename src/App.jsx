@@ -8,6 +8,7 @@ import Projects from "./Components/Projects";
 import LocomotiveScroll from "locomotive-scroll";
 import About from "./Pages/About";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const App = () => {
   const location = useLocation();
