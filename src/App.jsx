@@ -8,13 +8,32 @@ import Projects from "./Components/Projects";
 import LocomotiveScroll from "locomotive-scroll";
 import About from "./Pages/About";
 import { motion } from "framer-motion";
-
+import { useRef } from "react";
 const App = () => {
   const location = useLocation();
-  const locomotiveScroll = new LocomotiveScroll();
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: scrollRef.current,
+      smooth: true,  // Enable smooth scrolling
+      mobile: {
+        smooth: true 
+      }
+    });
+
+
+    scroll.update();
+
+    
+    return () => {
+      scroll.destroy();
+    };
+  }, [location]);
+
 
   return (
-    <motion.div  initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 2, ease: [0.65, 0, 0.35, 1]}} className="w-full min-h-screen bg-[#F1F1F1]">
+    <motion.div ref={scrollRef}  initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 2, ease: [0.65, 0, 0.35, 1]}} className="w-full min-h-screen bg-[#F1F1F1]">
       <Navbar />
 
       <Routes>
